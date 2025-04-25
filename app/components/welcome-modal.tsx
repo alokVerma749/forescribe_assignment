@@ -1,9 +1,8 @@
 "use client"
 
-import Button from "@/app/components/button";
 import { motion } from "framer-motion";
-import { ThemeToggle } from "./theme-toggle";
-import Link from "next/link";
+import Button from "@/app/components/button";
+import Image from "next/image";
 
 export default function WelcomeModal() {
 
@@ -15,7 +14,6 @@ export default function WelcomeModal() {
       className="bg-black/40 backdrop-blur-md rounded-xl p-8 w-full max-w-md shadow-2xl border border-white/20 dark:border-white/10"
     >
       <div className="flex flex-col items-center text-center">
-        <Link href={'/about'}>About</Link>
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -23,19 +21,9 @@ export default function WelcomeModal() {
           className="mb-6"
         >
           <div className="flex items-center justify-center">
-            <span className="text-purple-500 text-2xl font-bold mr-1">f</span>
-            <span className="text-white text-xl font-semibold">forescribe</span>
+            <Image src={'/Logo.svg'} alt="logo" width={25} height={25} />
           </div>
         </motion.div>
-
-        <motion.h1
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-          className="text-xl font-semibold text-white mb-8"
-        >
-          <ThemeToggle />
-        </motion.h1>
 
         <motion.h1
           initial={{ y: -20, opacity: 0 }}
@@ -74,8 +62,7 @@ export default function WelcomeModal() {
           transition={{ delay: 0.6, duration: 0.5 }}
           className="mt-6 text-xs text-zinc-500 max-w-xs"
         >
-          By using Forescribe, you agree to our terms of service and acknowledge that you have read our privacy policy.
-        </motion.p>
+          By clicking “Continue with Google/Microsoft” above, you acknowledge that  you have read and understood, and agree to Forescribe's Terms & Conditions and Privacy Policy.        </motion.p>
       </div>
     </motion.div>
   )
