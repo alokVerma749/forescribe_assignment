@@ -55,14 +55,6 @@ export default function WelcomeModal() {
             </Button>
           </motion.div>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.7 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-6 text-xs text-zinc-500 max-w-xs"
-        >
-          By clicking “Continue with Google/Microsoft” above, you acknowledge that  you have read and understood, and agree to Forescribe's Terms & Conditions and Privacy Policy.        </motion.p>
       </div>
     </motion.div>
   )

@@ -27,7 +27,7 @@ const integrations: Integration[] = [
   {
     id: "namecheap",
     name: "Name Cheap",
-    logo: "/placeholder.svg?height=40&width=40",
+    logo: "/assets/namecheap.png",
     color: "bg-gradient-to-t from-[#F24E1E]/40 to-white dark:to-gray-900",
     type: "Project Management",
     bgColor: '#FF5301'
@@ -35,7 +35,7 @@ const integrations: Integration[] = [
   {
     id: "notion",
     name: "Notion",
-    logo: "/placeholder.svg?height=40&width=40",
+    logo: "/assets/notion.png",
     color: "bg-black",
     type: "Project Management",
     bgColor: '#0A66C2'
@@ -43,7 +43,7 @@ const integrations: Integration[] = [
   {
     id: "canva",
     name: "Canva",
-    logo: "/placeholder.svg?height=40&width=40",
+    logo: "/assets/canva.png",
     color: "bg-gradient-to-t from-[#00C4CC]/40 to-white dark:to-gray-900",
     type: "Project Management",
     bgColor: '#24BECA'
@@ -51,7 +51,7 @@ const integrations: Integration[] = [
   {
     id: "chatgpt",
     name: "ChatGPT",
-    logo: "/placeholder.svg?height=40&width=40",
+    logo: "/assets/gpt.png",
     color: "bg-gradient-to-t from-[#10A37F]/40 to-white dark:to-gray-900",
     type: "Project Management",
     bgColor: '#10A37F'
@@ -59,7 +59,7 @@ const integrations: Integration[] = [
   {
     id: "linkedin",
     name: "LinkedIn",
-    logo: "/placeholder.svg?height=40&width=40",
+    logo: "/assets/linkedin.png",
     color: "bg-gradient-to-t from-[#0077B5]/40 to-white dark:to-gray-900",
     type: "Project Management",
     bgColor: '#0A66C2'
@@ -67,7 +67,7 @@ const integrations: Integration[] = [
   {
     id: "skype",
     name: "Skype",
-    logo: "/placeholder.svg?height=40&width=40",
+    logo: "/assets/skype.png",
     color: "bg-[#00AFF0]/10",
     type: "Project Management",
     bgColor: '#0098E3'
@@ -75,7 +75,7 @@ const integrations: Integration[] = [
   {
     id: "aws",
     name: "AWS",
-    logo: "/placeholder.svg?height=40&width=40",
+    logo: "/assets/aws.png",
     color: "bg-[#FF9900]/10",
     type: "Project Management",
     bgColor: '#262E3B'
@@ -83,15 +83,15 @@ const integrations: Integration[] = [
   {
     id: "quickbooks",
     name: "QB",
-    logo: "/placeholder.svg?height=40&width=40",
+    logo: "/assets/qb.png",
     color: "bg-[#2CA01C]/10",
     type: "Project Management",
     bgColor: '#2CA01C'
   },
   {
-    id: "slack",
-    name: "Slack",
-    logo: "/placeholder.svg?height=40&width=40",
+    id: "flatfile",
+    name: "Flatfile",
+    logo: "/assets/flatfile.png",
     color: "bg-[#4A154B]/10",
     type: "Project Management",
     bgColor: '#4A154B'
@@ -99,7 +99,7 @@ const integrations: Integration[] = [
   {
     id: "honey",
     name: "Honey",
-    logo: "/placeholder.svg?height=40&width=40",
+    logo: "/assets/jane.png",
     color: "bg-gradient-to-t from-[#FFBB00] to-white dark:to-gray-900",
     type: "Project Management",
     bgColor: '#FFBB00'
@@ -107,7 +107,7 @@ const integrations: Integration[] = [
   {
     id: "chimp",
     name: "Mail Chimp",
-    logo: "/assets/jane.png",
+    logo: "/assets/chimp.png",
     type: "Project Management",
     color: "bg-gradient-to-t from-[#FFE002] to-white dark:to-gray-900",
     bgColor: '#FFE002'

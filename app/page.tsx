@@ -31,8 +31,16 @@ export default function Home() {
         <IntegrationGrid />
       </motion.div>
 
-      <div className="relative z-10 flex items-center justify-center min-h-screen">
+      <div className="relative z-10 flex items-center justify-center min-h-screen flex-col">
         <WelcomeModal />
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.7 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="text-xs text-white max-w-md font-medium"
+        >
+          By clicking “Continue with Google/Microsoft” above, you acknowledge that  you have read and understood, and agree to Forescribe's <span className="text-purple-500">Terms & Conditions</span> and <span className="text-purple-500">Privacy Policy</span>.
+        </motion.p>
       </div>
     </main>
   )
