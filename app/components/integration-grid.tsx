@@ -173,16 +173,17 @@ const gridItems = [
 ]
 
 export default function IntegrationGrid() {
-  const [shuffledItems, setShuffledItems] = useState<any[]>([])
+  const [shuffledItems, setShuffledItems] = useState<any[]>([]);
 
   // Shuffle the grid items on mount
   useEffect(() => {
-    const shuffled = [...gridItems].sort(() => Math.random() - 0.5)
-    setShuffledItems(shuffled)
-  }, [])
+    const shuffled = [...gridItems].sort(() => Math.random() - 0.5);
+    setShuffledItems(shuffled);
+  }, []);
 
   return (
-    <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+    <div
+      className="grid grid-cols-2  sm:grid-cols-3  md:grid-cols-4  lg:grid-cols-5  gap-4  p-4 min-h-[150vh]">
       {shuffledItems.map((item, index) => (
         <motion.div
           key={`${item.type}-${item.id}-${index}`}
@@ -195,12 +196,17 @@ export default function IntegrationGrid() {
           }}
           className="h-full"
         >
-          {item.type === "integration" ? <IntegrationCard integration={item} /> : <PersonCard person={item} />}
+          {item.type === "integration" ? (
+            <IntegrationCard integration={item} />
+          ) : (
+            <PersonCard person={item} />
+          )}
         </motion.div>
       ))}
     </div>
-  )
+  );
 }
+
 
 function IntegrationCard({ integration }: { integration: Integration }) {
   return (
@@ -243,9 +249,9 @@ function PersonCard({ person }: { person: Person }) {
           <Image
             src={person.avatar || "/placeholder.svg"}
             alt={person.name}
-            width={100}
-            height={100}
-            className="object-cover"
+            width={150}
+            height={80}
+            className="object-contain"
           />
         </div>
       </div>
