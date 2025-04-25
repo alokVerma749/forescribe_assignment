@@ -30,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`
   
   return (
-    <button className={combinedClassName} {...props}>
+    <button aria-label="Button" className={combinedClassName} {...props}>
       {children}
     </button>
   )

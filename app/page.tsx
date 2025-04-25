@@ -5,16 +5,28 @@ import IntegrationGrid from "./components/integration-grid";
 import WelcomeModal from "./components/welcome-modal";
 import { motion } from "framer-motion"
 import { ThemeToggle } from "./components/theme-toggle";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[linear-gradient(135deg,_#000000_33%,_#8B3DFF_89%,_#8B3DFF_100%)] dark:bg-[linear-gradient(135deg,_#000000_33%,_#8B3DFF_89%,_#8B3DFF_100%)]">
       <div className="z-50 absolute w-screen p-5 flex items-center justify-between">
         <div className="flex items-center">
-          <Image src={'/Logo.svg'} alt="logo" width={10} height={10} className="mr-2" />
+          <Image src={'/Logo.svg'} alt="logo" width={15} height={15} className="mr-2" />
           <span className="text-white text-xl font-semibold">forescribe</span>
         </div>
-
+        <ul className="list-none flex flex-row w-1/3 justify-evenly text-white">
+          <li className="cursor-pointer">
+            <Link href={'/about'}>
+              About
+            </Link>
+          </li>
+          <li className="cursor-pointer">
+            <Link href={'/contact'}>
+              Contact Us
+            </Link>
+          </li>
+        </ul>
         <ThemeToggle />
       </div>
 
