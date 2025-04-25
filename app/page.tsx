@@ -15,7 +15,7 @@ export default function Home() {
           <Image src={'/Logo.svg'} alt="logo" width={15} height={15} className="mr-2" />
           <span className="text-white text-xl font-semibold">forescribe</span>
         </div>
-        <ul className="list-none flex flex-row w-1/3 justify-evenly text-white">
+        <ul className="list-none flex flex-row w-1/4 justify-evenly text-white border-b-1">
           <li className="cursor-pointer">
             <Link href={'/about'}>
               About
