@@ -1,19 +1,17 @@
 "use client"
 
-import { useState } from "react"
 import Button from "@/app/components/button"
 import { motion } from "framer-motion"
 import { ThemeToggle } from "./theme-toggle"
 
 export default function WelcomeModal() {
-  const [isHovered, setIsHovered] = useState(false)
 
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="bg-zinc-900 rounded-xl p-8 w-full max-w-md shadow-2xl"
+      className="bg-black/40 backdrop-blur-md rounded-xl p-8 w-full max-w-md shadow-2xl border border-white/20 dark:border-white/10"
     >
       <div className="flex flex-col items-center text-center">
         <motion.div
