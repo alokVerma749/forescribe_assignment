@@ -11,6 +11,7 @@ interface Integration {
   logo: string
   color: string
   type: string
+  bgColor: string
 }
 
 interface Person {
@@ -18,16 +19,18 @@ interface Person {
   name: string
   avatar: string
   quote: string
+  bgColor: string
 }
 
 // Sample data for integrations
 const integrations: Integration[] = [
   {
-    id: "figma",
-    name: "Figma",
+    id: "namecheap",
+    name: "Name Cheap",
     logo: "/placeholder.svg?height=40&width=40",
-    color: "bg-[#F24E1E]/10",
+    color: "bg-gradient-to-t from-[#F24E1E]/40 to-white dark:to-gray-900",
     type: "Project Management",
+    bgColor: '#FF5301'
   },
   {
     id: "notion",
@@ -35,27 +38,31 @@ const integrations: Integration[] = [
     logo: "/placeholder.svg?height=40&width=40",
     color: "bg-black",
     type: "Project Management",
+    bgColor: '#0A66C2'
   },
   {
     id: "canva",
     name: "Canva",
     logo: "/placeholder.svg?height=40&width=40",
-    color: "bg-[#00C4CC]/10",
+    color: "bg-gradient-to-t from-[#00C4CC]/40 to-white dark:to-gray-900",
     type: "Project Management",
+    bgColor: '#24BECA'
   },
   {
     id: "chatgpt",
     name: "ChatGPT",
     logo: "/placeholder.svg?height=40&width=40",
-    color: "bg-[#10A37F]/10",
+    color: "bg-gradient-to-t from-[#10A37F]/40 to-white dark:to-gray-900",
     type: "Project Management",
+    bgColor: '#10A37F'
   },
   {
     id: "linkedin",
     name: "LinkedIn",
     logo: "/placeholder.svg?height=40&width=40",
-    color: "bg-[#0077B5]/10",
+    color: "bg-gradient-to-t from-[#0077B5]/40 to-white dark:to-gray-900",
     type: "Project Management",
+    bgColor: '#0A66C2'
   },
   {
     id: "skype",
@@ -63,6 +70,7 @@ const integrations: Integration[] = [
     logo: "/placeholder.svg?height=40&width=40",
     color: "bg-[#00AFF0]/10",
     type: "Project Management",
+    bgColor: '#0098E3'
   },
   {
     id: "aws",
@@ -70,6 +78,7 @@ const integrations: Integration[] = [
     logo: "/placeholder.svg?height=40&width=40",
     color: "bg-[#FF9900]/10",
     type: "Project Management",
+    bgColor: '#262E3B'
   },
   {
     id: "quickbooks",
@@ -77,6 +86,7 @@ const integrations: Integration[] = [
     logo: "/placeholder.svg?height=40&width=40",
     color: "bg-[#2CA01C]/10",
     type: "Project Management",
+    bgColor: '#2CA01C'
   },
   {
     id: "slack",
@@ -84,13 +94,23 @@ const integrations: Integration[] = [
     logo: "/placeholder.svg?height=40&width=40",
     color: "bg-[#4A154B]/10",
     type: "Project Management",
+    bgColor: '#4A154B'
   },
   {
     id: "honey",
     name: "Honey",
     logo: "/placeholder.svg?height=40&width=40",
-    color: "bg-[#FFBB00]/10",
+    color: "bg-gradient-to-t from-[#FFBB00] to-white dark:to-gray-900",
     type: "Project Management",
+    bgColor: '#FFBB00'
+  },
+  {
+    id: "chimp",
+    name: "Mail Chimp",
+    logo: "/assets/jane.png",
+    type: "Project Management",
+    color: "bg-gradient-to-t from-[#FFE002] to-white dark:to-gray-900",
+    bgColor: '#FFE002'
   },
 ]
 
@@ -99,60 +119,54 @@ const people: Person[] = [
   {
     id: "ariana",
     name: "Ariana",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/assets/ariana.png",
     quote: "I automatically update articles of content to identify what's working and what's not.",
+    bgColor: '#242059'
   },
   {
     id: "andrew",
     name: "Andrew",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/assets/andrew.png",
     quote: "I automatically update articles of content to identify what's working and what's not.",
+    bgColor: '#242059'
   },
   {
     id: "jane",
     name: "Jane Mary",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/assets/jane.png",
     quote: "I automatically update articles of content to identify what's working and what's not.",
+    bgColor: '#FF9CA8'
   },
   {
     id: "kate",
     name: "Kate",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/assets/kate.png",
     quote: "I automatically update articles of content to identify what's working and what's not.",
-  },
-  {
-    id: "name",
-    name: "Name Cheap",
-    avatar: "/placeholder.svg?height=60&width=60",
-    quote: "I automatically update articles of content to identify what's working and what's not.",
-  },
-  {
-    id: "ching",
-    name: "Ching Monk",
-    avatar: "/placeholder.svg?height=60&width=60",
-    quote: "I automatically update articles of content to identify what's working and what's not.",
+    bgColor: '#D2B7FF'
   },
   {
     id: "jack1",
     name: "Jack Mark",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/assets/jack.png",
     quote: "I automatically update articles of content to identify what's working and what's not.",
+    bgColor: '#FF9CA8'
   },
   {
     id: "jack2",
     name: "Jack Mark",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/assets/jack.png",
     quote: "I automatically update articles of content to identify what's working and what's not.",
+    bgColor: '#FF9CA8'
   },
   {
     id: "jack3",
     name: "Jack Mark",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/assets/jack.png",
     quote: "I automatically update articles of content to identify what's working and what's not.",
+    bgColor: '#FF9CA8'
   },
 ]
 
-// Combined items for the grid
 const gridItems = [
   ...integrations.map((item) => ({ ...item, type: "integration" })),
   ...people.map((item) => ({ ...item, type: "person" })),
@@ -192,9 +206,13 @@ function IntegrationCard({ integration }: { integration: Integration }) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className={`rounded-xl p-4 h-full flex flex-col justify-between ${integration.color || "bg-zinc-800"}`}
+      className={`rounded-xl p-4 h-96 flex flex-col justify-between ${integration.color || "bg-zinc-800"}`}
+
     >
-      <div className="flex justify-center items-center h-12 w-12 mx-auto mb-3">
+      <div
+        className="rounded-xl flex justify-center items-center h-28 w-full overflow-hidden mx-auto mb-3"
+        style={{ backgroundColor: integration.bgColor }}
+      >
         <Image
           src={integration.logo || "/placeholder.svg"}
           alt={integration.name}
@@ -203,9 +221,9 @@ function IntegrationCard({ integration }: { integration: Integration }) {
           className="object-contain"
         />
       </div>
-      <div className="text-center">
-        <h3 className="font-medium text-white">{integration.name}</h3>
-        <p className="text-xs text-zinc-400 mt-1">{integration.type}</p>
+      <div className="text-center  h-1/2">
+        <h3 className="font-semibold text-white">{integration.name}</h3>
+        <p className="text-medium text-zinc-400 mt-1">{integration.type}</p>
       </div>
     </motion.div>
   )
@@ -213,21 +231,27 @@ function IntegrationCard({ integration }: { integration: Integration }) {
 
 function PersonCard({ person }: { person: Person }) {
   return (
-    <motion.div whileHover={{ scale: 1.05 }} className="bg-zinc-800/50 rounded-xl p-4 h-full flex flex-col">
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      className="bg-zinc-800/50 rounded-xl p-4 h-96 flex flex-col"
+    >
       <div className="flex justify-center mb-3">
-        <div className="h-16 w-16 rounded-full overflow-hidden">
+        <div
+          className="rounded-xl h-28 w-full overflow-hidden flex justify-center items-end"
+          style={{ backgroundColor: person.bgColor }}
+        >
           <Image
             src={person.avatar || "/placeholder.svg"}
             alt={person.name}
-            width={60}
-            height={60}
+            width={100}
+            height={100}
             className="object-cover"
           />
         </div>
       </div>
-      <div className="text-center flex-1 flex flex-col">
-        <h3 className="font-medium text-white mb-2">{person.name}</h3>
-        <p className="text-xs text-zinc-400 flex-1">{person.quote}</p>
+      <div className="text-center flex-1 flex flex-col mt-14">
+        <h3 className="text-white mb-2 font-semibold">{person.name}</h3>
+        <p className="text-medium text-zinc-400 flex-1">{person.quote}</p>
       </div>
     </motion.div>
   )

@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Button from "@/app/components/button"
 import { motion } from "framer-motion"
+import { ThemeToggle } from "./theme-toggle"
 
 export default function WelcomeModal() {
   const [isHovered, setIsHovered] = useState(false)
@@ -26,6 +27,15 @@ export default function WelcomeModal() {
             <span className="text-white text-xl font-semibold">forescribe</span>
           </div>
         </motion.div>
+
+        <motion.h1
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="text-xl font-semibold text-white mb-8"
+        >
+          <ThemeToggle />
+        </motion.h1>
 
         <motion.h1
           initial={{ y: -20, opacity: 0 }}
