@@ -62,3 +62,10 @@ Implemented using **Framer Motion**.
 git clone https://github.com/alokVerma749/forescribe_assignment.git
 cd forescribe_assignment
 npm install
+```
+
+### TO start development server
+
+```bash
+npm run dev
+```
