@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 // Define integration types
-interface Integration {
+interface Brand {
   id: string
   name: string
   logo: string
@@ -22,13 +22,13 @@ interface Person {
   bgColor: string
 }
 
-// Sample data for integrations
-const integrations: Integration[] = [
+// Sample data for brands
+const brands: Brand[] = [
   {
     id: "namecheap",
     name: "Name Cheap",
     logo: "/assets/namecheap.png",
-    color: "bg-gradient-to-t from-[#F24E1E]/40 to-white dark:to-gray-900",
+    color: "bg-gradient-to-t from-[#F24E1E]/40 to-white dark:to-[#FFFFFF]",
     type: "Project Management",
     bgColor: '#FF5301'
   },
@@ -36,15 +36,15 @@ const integrations: Integration[] = [
     id: "notion",
     name: "Notion",
     logo: "/assets/notion.png",
-    color: "bg-black",
+    color: "bg-gradient-to-t from-black/20 to-[#FFFFFF]",
     type: "Project Management",
-    bgColor: '#0A66C2'
+    bgColor: '#000000'
   },
   {
     id: "canva",
     name: "Canva",
     logo: "/assets/canva.png",
-    color: "bg-gradient-to-t from-[#00C4CC]/40 to-white dark:to-gray-900",
+    color: "bg-gradient-to-t from-[#00C4CC]/40 to-white dark:to-[#FFFFFF]",
     type: "Project Management",
     bgColor: '#24BECA'
   },
@@ -68,7 +68,7 @@ const integrations: Integration[] = [
     id: "skype",
     name: "Skype",
     logo: "/assets/skype.png",
-    color: "bg-[#00AFF0]/10",
+    color: "bg-gradient-to-t from-[#0098E3]/20 to-white dark:to-gray-900",
     type: "Project Management",
     bgColor: '#0098E3'
   },
@@ -76,7 +76,7 @@ const integrations: Integration[] = [
     id: "aws",
     name: "AWS",
     logo: "/assets/aws.png",
-    color: "bg-[#FF9900]/10",
+    color: "bg-gradient-to-t from-[#3C434F]/40 to-white dark:to-[#FFFFFF]",
     type: "Project Management",
     bgColor: '#262E3B'
   },
@@ -84,7 +84,7 @@ const integrations: Integration[] = [
     id: "quickbooks",
     name: "QB",
     logo: "/assets/qb.png",
-    color: "bg-[#2CA01C]/10",
+    color: "bg-gradient-to-t from-[#2CA01C]/40 to-white dark:to-[#FFFFFF]",
     type: "Project Management",
     bgColor: '#2CA01C'
   },
@@ -92,17 +92,9 @@ const integrations: Integration[] = [
     id: "flatfile",
     name: "Flatfile",
     logo: "/assets/flatfile.png",
-    color: "bg-[#4A154B]/10",
+    color: "bg-gradient-to-t from-[#FEE4CB]/40 to-white dark:to-[#FFFFFF]",
     type: "Project Management",
-    bgColor: '#4A154B'
-  },
-  {
-    id: "honey",
-    name: "Honey",
-    logo: "/assets/jane.png",
-    color: "bg-gradient-to-t from-[#FFBB00] to-white dark:to-gray-900",
-    type: "Project Management",
-    bgColor: '#FFBB00'
+    bgColor: '#FEE4CB'
   },
   {
     id: "chimp",
@@ -120,55 +112,55 @@ const people: Person[] = [
     id: "ariana",
     name: "Ariana",
     avatar: "/assets/ariana.png",
-    quote: "I automatically update articles of content to identify what's working and what's not.",
+    quote: '“We automatically resolve 25% of customer queries across desktop and mobile using Intercom bots.”',
     bgColor: '#242059'
   },
   {
     id: "andrew",
     name: "Andrew",
     avatar: "/assets/andrew.png",
-    quote: "I automatically update articles of content to identify what's working and what's not.",
+    quote: '“We automatically resolve 25% of customer queries across desktop and mobile using Intercom bots.”',
     bgColor: '#242059'
   },
   {
     id: "jane",
     name: "Jane Mary",
     avatar: "/assets/jane.png",
-    quote: "I automatically update articles of content to identify what's working and what's not.",
+    quote: '“We automatically resolve 25% of customer queries across desktop and mobile using Intercom bots.”',
     bgColor: '#FF9CA8'
   },
   {
     id: "kate",
     name: "Kate",
     avatar: "/assets/kate.png",
-    quote: "I automatically update articles of content to identify what's working and what's not.",
+    quote: '“We automatically resolve 25% of customer queries across desktop and mobile using Intercom bots.”',
     bgColor: '#D2B7FF'
   },
   {
     id: "jack1",
     name: "Jack Mark",
     avatar: "/assets/jack.png",
-    quote: "I automatically update articles of content to identify what's working and what's not.",
+    quote: '“We automatically resolve 25% of customer queries across desktop and mobile using Intercom bots.”',
     bgColor: '#FF9CA8'
   },
   {
     id: "jack2",
     name: "Jack Mark",
     avatar: "/assets/jack.png",
-    quote: "I automatically update articles of content to identify what's working and what's not.",
+    quote: '“We automatically resolve 25% of customer queries across desktop and mobile using Intercom bots.”',
     bgColor: '#FF9CA8'
   },
   {
     id: "jack3",
     name: "Jack Mark",
     avatar: "/assets/jack.png",
-    quote: "I automatically update articles of content to identify what's working and what's not.",
+    quote: '“We automatically resolve 25% of customer queries across desktop and mobile using Intercom bots.”',
     bgColor: '#FF9CA8'
   },
 ]
 
 const gridItems = [
-  ...integrations.map((item) => ({ ...item, type: "integration" })),
+  ...brands.map((item) => ({ ...item, type: "integration" })),
   ...people.map((item) => ({ ...item, type: "person" })),
 ]
 
@@ -197,7 +189,7 @@ export default function IntegrationGrid() {
           className="h-full"
         >
           {item.type === "integration" ? (
-            <IntegrationCard integration={item} />
+            <IntegrationCard brand={item} />
           ) : (
             <PersonCard person={item} />
           )}
@@ -207,28 +199,28 @@ export default function IntegrationGrid() {
   );
 }
 
-function IntegrationCard({ integration }: { integration: Integration }) {
+function IntegrationCard({ brand }: { brand: Brand }) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className={`rounded-xl p-4 h-96 flex flex-col justify-between ${integration.color || "bg-zinc-800"}`}
+      className={`rounded-xl p-4 h-96 flex flex-col justify-between ${brand.color || "bg-zinc-800"}`}
 
     >
       <div
         className="rounded-xl flex justify-center items-center h-28 w-full overflow-hidden mx-auto mb-3"
-        style={{ backgroundColor: integration.bgColor }}
+        style={{ backgroundColor: brand.bgColor }}
       >
         <Image
-          src={integration.logo || "/placeholder.svg"}
-          alt={integration.name}
-          width={40}
-          height={40}
+          src={brand.logo || "/placeholder.svg"}
+          alt={brand.name}
+          width={50}
+          height={50}
           className="object-contain"
         />
       </div>
       <div className="text-center  h-1/2">
-        <h3 className="font-semibold text-white">{integration.name}</h3>
-        <p className="text-medium text-zinc-400 mt-1">{integration.type}</p>
+        <h3 className="font-semibold text-[#111111] dark:text-white">{brand.name}</h3>
+        <p className="text-medium mt-1 text-[#111111] dark:text-white">{brand.type}</p>
       </div>
     </motion.div>
   )
@@ -238,7 +230,7 @@ function PersonCard({ person }: { person: Person }) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="bg-zinc-800/50 rounded-xl p-4 h-96 flex flex-col"
+      className="bg-white dark:bg-zinc-700 rounded-xl p-4 h-96 flex flex-col"
     >
       <div className="flex justify-center mb-3">
         <div
@@ -248,15 +240,15 @@ function PersonCard({ person }: { person: Person }) {
           <Image
             src={person.avatar || "/placeholder.svg"}
             alt={person.name}
-            width={150}
-            height={80}
+            width={100}
+            height={70}
             className="object-contain"
           />
         </div>
       </div>
       <div className="text-center flex-1 flex flex-col mt-14">
-        <h3 className="text-white mb-2 font-semibold">{person.name}</h3>
-        <p className="text-medium text-zinc-400 flex-1">{person.quote}</p>
+        <h3 className="mb-2 font-semibold text-[#111111] dark:text-white">{person.name}</h3>
+        <p className="text-medium flex-1 text-[#111111] dark:text-white">{person.quote}</p>
       </div>
     </motion.div>
   )
