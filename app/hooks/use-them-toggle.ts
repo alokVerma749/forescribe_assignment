@@ -12,12 +12,8 @@ export function useThemeToggle() {
   }, [])
 
   const toggleTheme = () => {
-    if (theme === "dark") {
-      setTheme("light")
-    } else {
-      setTheme("dark")
-    }
-  }
+    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+  };
 
   return {
     theme: mounted ? theme : undefined,

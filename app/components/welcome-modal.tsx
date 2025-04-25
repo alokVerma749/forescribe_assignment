@@ -1,8 +1,9 @@
 "use client"
 
-import Button from "@/app/components/button"
-import { motion } from "framer-motion"
-import { ThemeToggle } from "./theme-toggle"
+import Button from "@/app/components/button";
+import { motion } from "framer-motion";
+import { ThemeToggle } from "./theme-toggle";
+import Link from "next/link";
 
 export default function WelcomeModal() {
 
@@ -14,6 +15,7 @@ export default function WelcomeModal() {
       className="bg-black/40 backdrop-blur-md rounded-xl p-8 w-full max-w-md shadow-2xl border border-white/20 dark:border-white/10"
     >
       <div className="flex flex-col items-center text-center">
+        <Link href={'/about'}>About</Link>
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

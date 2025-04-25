@@ -207,7 +207,6 @@ export default function IntegrationGrid() {
   );
 }
 
-
 function IntegrationCard({ integration }: { integration: Integration }) {
   return (
     <motion.div
